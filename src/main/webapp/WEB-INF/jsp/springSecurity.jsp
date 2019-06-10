@@ -15,8 +15,10 @@
 <body>
 Welcome <security:authentication property="principal.username"></security:authentication>
 Your Role is <security:authentication property="principal.authorities"></security:authentication>
-<security:authorize access="hasRole('MANAGER')">
+<security:authorize access="hasAnyRole('MANAGER','HR')">
     <h1>
+        <a href="/mgr/add">Add</a><br>
+        <a href="/mgr/edit">Edit</a>
         This is Manager Area
     </h1>
 </security:authorize>
@@ -25,6 +27,7 @@ Your Role is <security:authentication property="principal.authorities"></securit
         This is Employee Area
     </h2>
 </security:authorize>
+
 <form:form action="/logout" method="post">
 <input type="submit" value="Logout">
 </form:form>

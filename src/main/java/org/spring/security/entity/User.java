@@ -13,24 +13,14 @@ public class User implements Serializable {
     @Id
     @Column(name = "username",unique = true, nullable = false)
     private String userName;
-    @Column(name = "password")
-    private String password;
-    @Column(name = "email")
-    private String email;
-    @Column(name="role")
-    private String role;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<Authority> authorities = new ArrayList<Authority>();
+    @Column(name = "enabled")
+    private int enabled;
 
-    public User() {
-    }
-
-    public User(String userName, String password, String email, String role) {
+    public User(String userName, String password, int enabled) {
         this.userName = userName;
         this.password = password;
-        this.email = email;
-        this.role = role;
+        this.enabled = enabled;
     }
 
     public String getUserName() {
@@ -49,19 +39,22 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    @Column(name = "password")
+    private String password;
+
+    public int getEnabled() {
+        return enabled;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
     }
 
-    public String getRole() {
-        return role;
+
+
+    public User() {
     }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+
+
 }

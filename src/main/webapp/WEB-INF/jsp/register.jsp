@@ -24,14 +24,7 @@
             <td>Email</td>
             <td><input type="text" name="email" /></td>
         </tr>
-        <tr>
-            <td><label>Multiple Selection </label>&nbsp;</td>
-            <td><select name="select2" size="3" multiple="multiple" tabindex="1">
-                <option  value="role_employee">ROLE_EMPLOYEE</option>
-                <option  value="role_manager">ROLE_MANAGER</option>
-            </select>
-            </td>
-        </tr>
+
        </table>
     <input type="submit" value="Submit" /></form>
 </body>
